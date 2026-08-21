@@ -1,0 +1,104 @@
+name: バグ報告
+description: 期待と実際、再現手順、観測した事実を分けて記録します
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        推測だけで原因を決めず、実際に観測した内容を書きます。
+        password、token、secret、個人情報は入力しないでください。
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 問題が起きた環境
+      description: 確認した環境を1つ選びます。
+      options:
+        - local
+        - preview
+        - production
+    validations:
+      required: true
+
+  - type: input
+    id: observed-at
+    attributes:
+      label: 確認した日時
+      description: 時刻まで分かるとlogを探しやすくなります。
+      placeholder: 2026-08-21 14:30 JST
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待した結果
+      description: 本来どうなると考えていたかを書きます。
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の結果
+      description: 画面の表示やerror messageを言い換えずに書きます。
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: 別の人が同じ操作をできるよう、開始から番号順に書きます。
+      placeholder: |
+        1. 公開URLを開く
+        2. 投稿欄へ文字を入力する
+        3. 投稿ボタンを押す
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: observed-layers
+    attributes:
+      label: 観測した場所
+      description: 実際に確認した場所だけを選びます。
+      options:
+        - label: 画面
+        - label: Elements
+        - label: Console
+        - label: Network
+        - label: server log
+        - label: database
+        - label: deploy log
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 観測した事実
+      description: URL、status、error message、件数などを書きます。
+    validations:
+      required: true
+
+  - type: textarea
+    id: unchecked
+    attributes:
+      label: まだ確認していないこと
+      description: 未確認の内容を、確認済みのように扱わないための欄です。
+    validations:
+      required: true
+
+  - type: textarea
+    id: done-condition
+    attributes:
+      label: 直ったと判断する条件
+      description: 同じ手順で何を確認できればよいかを書きます。
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 公開前の確認
+      options:
+        - label: password、token、secret、個人情報を含めていません
+          required: true
