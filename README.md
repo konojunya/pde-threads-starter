@@ -58,7 +58,7 @@ bun run security:scan
 
 ## Templateから始める
 
-GitHub Template公開後は、教材のLesson 002にある`Use this template`の手順から、自分専用のrepoを作ります。forkは使用しません。
+このrepoはGitHub Templateとして公開されています。[Use this template](https://github.com/konojunya/pde-threads-starter/generate)から自分専用のrepoを作ります。forkは使用しません。詳しい観察ポイントは教材のLesson 002で扱います。
 
 作成したrepoの`Issues`には、Lesson 012で使うバグ報告フォームが含まれます。期待、実際、再現手順、観測した事実を自分で記入し、秘密情報を貼らないための補助です。
 
