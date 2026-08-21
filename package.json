@@ -1,0 +1,36 @@
+{
+  "name": "pde-threads-starter",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "bun@1.3.4",
+  "engines": {
+    "node": ">=24.19.0 <25",
+    "bun": ">=1.3.4"
+  },
+  "trustedDependencies": [
+    "unrs-resolver"
+  ],
+  "scripts": {
+    "preinstall": "node scripts/check-runtime.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run lint && bun run typecheck && bun run build",
+    "security:scan": "bun audit --audit-level=high"
+  },
+  "dependencies": {
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.1",
+    "typescript": "6.0.3"
+  }
+}
